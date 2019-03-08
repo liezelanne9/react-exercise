@@ -1,14 +1,15 @@
-// import React from 'react';
+import React from 'react';
 
 const ListItem = (props) =>
   <div className="item">
     <div>
-      <span>DISPLAY INDEX LOCATION AND ITEM NAME</span>
-      <div>DISPLAY NUMBER OF LIKES</div>
+      <div>Position: {props.index}</div>
+      <div>Name: {props.item.name}</div>
+      <div>Likes: {props.item.likes}</div>
     </div>
     <div>
-      <button type="button">remove</button>
-      <button type="button">like</button>
+      <button type="button" onClick={() => props.deleteItem(props.index)}>remove</button>
+      <button type="button" onClick={() => props.updateItem(props.index)}>like</button>
     </div>
   </div>
 
